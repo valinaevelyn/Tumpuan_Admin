@@ -235,7 +235,7 @@ class DashboardScreen extends GetView<DashboardController> {
           const SizedBox(height: kSpacing),
           Row(
             children: [
-              const Expanded(child: HeaderText("Calendar")),
+              const Expanded(child: HeaderText("Log")),
               IconButton(
                 onPressed: controller.onPressedCalendar,
                 icon: const Icon(EvaIcons.calendarOutline),
