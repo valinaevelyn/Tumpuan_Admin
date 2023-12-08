@@ -36,11 +36,18 @@ class _TaskGroup extends StatelessWidget {
   }
 
   Widget _buildTitle() {
-    return Text(
-      title,
-      style: TextStyle(
+    return Container(
+      padding: const EdgeInsets.only(left: 10, top: 5, bottom: 5, right: 100),
+      decoration: BoxDecoration(
         color: kFontColorPallets[2],
-        fontWeight: FontWeight.bold,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
