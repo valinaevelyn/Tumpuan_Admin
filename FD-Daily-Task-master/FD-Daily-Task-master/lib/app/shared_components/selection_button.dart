@@ -81,26 +81,37 @@ class _Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color:
-          (!selected) ? null : Theme.of(context).primaryColor.withOpacity(.1),
-      borderRadius: BorderRadius.circular(kBorderRadius),
+      // borderRadius: BorderRadius.circular(kBorderRadius),
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadius.circular(10),
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Row(
-            children: [
-              _buildIcon(),
-              const SizedBox(width: kSpacing / 2),
-              Expanded(child: _buildLabel()),
-              if (data.totalNotif != null)
-                Padding(
-                  padding: const EdgeInsets.only(left: kSpacing / 2),
-                  child: _buildNotif(),
-                )
-            ],
-          ),
+        child: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color:
+                    (!selected) ? kFontColorPallets[2] : kFontColorPallets[0],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15),
+                child: Row(
+                  children: [
+                    _buildIcon(),
+                    const SizedBox(width: kSpacing / 2),
+                    Expanded(child: _buildLabel()),
+                    if (data.totalNotif != null)
+                      Padding(
+                        padding: const EdgeInsets.only(left: kSpacing / 2),
+                        child: _buildNotif(),
+                      ),
+                    // SizedBox(height: 10)
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 10)
+          ],
         ),
       ),
     );
@@ -110,9 +121,7 @@ class _Button extends StatelessWidget {
     return Icon(
       (!selected) ? data.icon : data.activeIcon,
       size: 20,
-      color: (!selected)
-          ? kFontColorPallets[1]
-          : Theme.of(Get.context!).primaryColor,
+      color: (!selected) ? kFontColorPallets[1] : Colors.white,
     );
   }
 
@@ -120,9 +129,7 @@ class _Button extends StatelessWidget {
     return Text(
       data.label,
       style: TextStyle(
-        color: (!selected)
-            ? kFontColorPallets[1]
-            : Theme.of(Get.context!).primaryColor,
+        color: (!selected) ? kFontColorPallets[0] : Colors.white,
         fontWeight: FontWeight.bold,
         letterSpacing: .8,
         fontSize: 14,

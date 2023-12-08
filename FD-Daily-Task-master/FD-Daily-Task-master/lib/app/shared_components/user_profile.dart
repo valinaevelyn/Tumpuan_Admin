@@ -1,4 +1,5 @@
 import 'package:daily_task/app/constans/app_constants.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 class UserProfileData {
@@ -41,7 +42,19 @@ class UserProfile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildName(),
+                    Container(
+                      child: Row(
+                        children: [
+                          Expanded(child: _buildName()),
+                          Icon(
+                            EvaIcons.edit2Outline,
+                            size: 15,
+                            color: Colors.black,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 3),
                     _buildJobdesk(),
                   ],
                 ),
@@ -65,7 +78,7 @@ class UserProfile extends StatelessWidget {
       data.name,
       style: TextStyle(
         fontWeight: FontWeight.bold,
-        color: kFontColorPallets[0],
+        color: Colors.black,
       ),
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
@@ -73,14 +86,25 @@ class UserProfile extends StatelessWidget {
   }
 
   Widget _buildJobdesk() {
-    return Text(
-      data.jobDesk,
-      style: TextStyle(
-        fontWeight: FontWeight.w300,
-        color: kFontColorPallets[1],
+    return Container(
+      padding: const EdgeInsets.all(3),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(9),
+        border: Border.all(
+          color: kFontColorPallets[0],
+          width: 0.6,
+        ),
       ),
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
+      child: Text(
+        data.jobDesk,
+        style: TextStyle(
+          fontWeight: FontWeight.w300,
+          color: kFontColorPallets[0],
+          fontSize: 9.5,
+        ),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
     );
   }
 }

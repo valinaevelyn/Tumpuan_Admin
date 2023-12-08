@@ -149,23 +149,25 @@ class DashboardScreen extends GetView<DashboardController> {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: _MainMenu(onSelected: controller.onSelectedMainMenu),
         ),
-        const Divider(
-          indent: 20,
-          thickness: 1,
-          endIndent: 20,
-          height: 60,
-        ),
-        _Member(member: controller.member),
-        const SizedBox(height: kSpacing),
-        _TaskMenu(
-          onSelected: controller.onSelectedTaskMenu,
-        ),
-        const SizedBox(height: kSpacing),
-        Padding(
-          padding: const EdgeInsets.all(kSpacing),
-          child: Text(
-            "2021 Teamwork lisence",
-            style: Theme.of(context).textTheme.caption,
+        const SizedBox(height: 0),
+        Center(
+          child: Container(
+            width: 250,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: kFontColorPallets[0],
+              borderRadius: BorderRadius.circular(20),
+            ),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(15),
+            child: Text(
+              "Copyright @ Mules 2023",
+              style: TextStyle(
+                color: Colors.white,
+                // fontWeight: FontWeight.bold,
+                fontSize: 12,
+              ),
+            ),
           ),
         ),
       ],
