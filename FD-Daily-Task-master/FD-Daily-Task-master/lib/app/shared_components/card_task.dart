@@ -40,45 +40,31 @@ class CardTask extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [primary, primary.withOpacity(.7)],
-                begin: AlignmentDirectional.topCenter,
-                end: AlignmentDirectional.bottomCenter,
+                begin: AlignmentDirectional.center,
+                end: AlignmentDirectional.center,
               ),
             ),
             child: _BackgroundDecoration(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
+              child: Container(
+                alignment: Alignment.center,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: 120,
+                    const Spacer(flex: 1),
+                    Container(
+                      height: 200,
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           _buildLabel(),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 5),
                           _buildJobdesk(),
                         ],
                       ),
                     ),
                     const Spacer(flex: 1),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _buildDate(),
-                        SizedBox(
-                          height: 20,
-                          child: VerticalDivider(
-                            thickness: 1,
-                            color: onPrimary,
-                          ),
-                        ),
-                        _buildHours(),
-                      ],
-                    ),
-                    const Spacer(flex: 2),
-                    _doneButton(),
                   ],
                 ),
               ),
@@ -93,13 +79,14 @@ class CardTask extends StatelessWidget {
     return Text(
       data.label,
       style: TextStyle(
-        fontSize: 18,
+        fontSize: 75,
         fontWeight: FontWeight.w800,
         color: onPrimary,
         letterSpacing: 1,
       ),
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
+      textAlign: TextAlign.center,
     );
   }
 

@@ -19,12 +19,13 @@ class _TaskInProgress extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
           itemCount: data.length,
-          itemBuilder: (context, index) => Padding(
+          itemBuilder: (context, index) => Container(
             padding: const EdgeInsets.symmetric(horizontal: kSpacing / 2),
+            alignment: Alignment.center,
             child: CardTask(
               data: data[index],
-              primary: _getSequenceColor(index),
-              onPrimary: Colors.white,
+              primary: kFontColorPallets[2],
+              onPrimary: kFontColorPallets[0],
             ),
           ),
         ),

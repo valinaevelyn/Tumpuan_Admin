@@ -15,25 +15,25 @@ class DashboardController extends GetxController {
 
   final taskInProgress = [
     CardTaskData(
-      label: "Determine meeting schedule",
-      jobDesk: "System Analyst",
+      label: "2743",
+      jobDesk: "Jumlah User",
       dueDate: DateTime.now().add(const Duration(minutes: 50)),
     ),
     CardTaskData(
-      label: "Personal branding",
-      jobDesk: "Marketing",
+      label: "10",
+      jobDesk: "Suara Puan",
       dueDate: DateTime.now().add(const Duration(hours: 4)),
     ),
     CardTaskData(
-      label: "UI UX",
-      jobDesk: "Design",
+      label: "120",
+      jobDesk: "Jumlah Daily Quiz",
       dueDate: DateTime.now().add(const Duration(days: 2)),
     ),
     CardTaskData(
-      label: "Determine meeting schedule",
-      jobDesk: "System Analyst",
-      dueDate: DateTime.now().add(const Duration(minutes: 50)),
-    )
+      label: "25",
+      jobDesk: "Untuk Puan",
+      dueDate: DateTime.now().add(const Duration(days: 2)),
+    ),
   ];
 
   final weeklyTask = [

@@ -18,9 +18,13 @@ class SearchField extends StatelessWidget {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
-        prefixIcon: const Icon(EvaIcons.search),
+        prefixIcon: const Icon(EvaIcons.search,
+            color: Color.fromRGBO(251, 111, 146, 1)),
         enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(width: .1),
+          borderSide: BorderSide(
+            width: 1,
+            color: Color.fromRGBO(251, 111, 146, 1),
+          ),
         ),
         hintText: hintText ?? "search..",
       ),
@@ -29,7 +33,7 @@ class SearchField extends StatelessWidget {
         if (onSearch != null) onSearch!(controller.text);
       },
       textInputAction: TextInputAction.search,
-      style: TextStyle(color: kFontColorPallets[1]),
+      style: TextStyle(color: kFontColorPallets[0]),
     );
   }
 }

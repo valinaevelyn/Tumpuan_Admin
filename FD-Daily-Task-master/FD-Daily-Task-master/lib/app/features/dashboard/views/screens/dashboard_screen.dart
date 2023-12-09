@@ -188,12 +188,13 @@ class DashboardScreen extends GetView<DashboardController> {
                   child: IconButton(
                     onPressed: onPressedMenu,
                     icon: const Icon(Icons.menu),
+                    color: kFontColorPallets[0],
                   ),
                 ),
               Expanded(
                 child: SearchField(
                   onSearch: controller.searchTask,
-                  hintText: "Search Task .. ",
+                  hintText: "Search ",
                 ),
               ),
             ],
@@ -207,10 +208,6 @@ class DashboardScreen extends GetView<DashboardController> {
                 ),
               ),
               const SizedBox(width: kSpacing / 2),
-              SizedBox(
-                width: 200,
-                child: TaskProgress(data: controller.dataTask),
-              ),
             ],
           ),
           const SizedBox(height: kSpacing),
