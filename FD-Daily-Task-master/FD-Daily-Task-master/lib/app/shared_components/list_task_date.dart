@@ -35,18 +35,48 @@ class ListTaskDate extends StatelessWidget {
         padding: const EdgeInsets.all(kSpacing / 2),
         child: Row(
           children: [
-            _buildHours(),
+            Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 26, vertical: 13),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(7),
+                  border: Border.all(
+                    color: kFontColorPallets[0],
+                    width: 1,
+                  ),
+                ),
+                child: _buildHours()),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: kSpacing),
-              child: _buildDivider(),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              // child: _buildDivider(),
             ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildTitle(),
+                  Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 3),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        border: Border.all(
+                          color: kFontColorPallets[0],
+                          width: 1,
+                        ),
+                      ),
+                      child: _buildTitle()),
                   const SizedBox(height: 5),
-                  _buildSubtitle(),
+                  Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 3),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        border: Border.all(
+                          color: kFontColorPallets[1],
+                          width: 1,
+                        ),
+                      ),
+                      child: _buildSubtitle()),
                 ],
               ),
             )
@@ -89,8 +119,9 @@ class ListTaskDate extends StatelessWidget {
       data.jobdesk,
       maxLines: 1,
       style: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w200,
+        fontSize: 10,
+        fontWeight: FontWeight.w600,
+        color: Color.fromRGBO(251, 111, 146, 1),
       ),
       overflow: TextOverflow.ellipsis,
     );
@@ -100,7 +131,7 @@ class ListTaskDate extends StatelessWidget {
     return Text(
       data.label,
       maxLines: 1,
-      style: const TextStyle(fontWeight: FontWeight.w600),
+      style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 8),
       overflow: TextOverflow.ellipsis,
     );
   }

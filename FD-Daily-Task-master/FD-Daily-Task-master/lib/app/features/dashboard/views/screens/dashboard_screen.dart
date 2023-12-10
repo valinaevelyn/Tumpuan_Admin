@@ -215,12 +215,95 @@ class DashboardScreen extends GetView<DashboardController> {
           const SizedBox(height: kSpacing * 2),
           const _HeaderWeeklyTask(),
           const SizedBox(height: kSpacing),
-          _WeeklyTask(
-            data: controller.weeklyTask,
-            onPressed: controller.onPressedTask,
-            onPressedAssign: controller.onPressedAssignTask,
-            onPressedMember: controller.onPressedMemberTask,
-          )
+          // _WeeklyTask(
+          //   data: controller.weeklyTask,
+          //   onPressed: controller.onPressedTask,
+          //   onPressedAssign: controller.onPressedAssignTask,
+          //   onPressedMember: controller.onPressedMemberTask,
+          // )
+
+          ClipRRect(
+            borderRadius: BorderRadius.circular(kBorderRadius),
+            child: Container(
+              height: 300,
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: kSpacing / 2),
+              decoration: BoxDecoration(
+                // color: kFontColorPallets[2],
+                border: Border.all(
+                  color: kFontColorPallets[0],
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(15),
+                    child: Text('User Daily',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w800,
+                          color: kFontColorPallets[0],
+                          letterSpacing: 1,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center),
+                  ),
+                  const Spacer(flex: 1),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: kSpacing),
+
+          Row(
+            children: [
+              Container(
+                height: 200,
+                width: 300,
+                decoration: BoxDecoration(
+                  color: kFontColorPallets[2],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                alignment: Alignment.center,
+                child: Text('Review Daily Quiz',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: kFontColorPallets[0],
+                      letterSpacing: 1,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center),
+              ),
+              const Spacer(),
+              Container(
+                height: 200,
+                width: 300,
+                decoration: BoxDecoration(
+                  color: kFontColorPallets[2],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                alignment: Alignment.center,
+                child: Text('Review Suara Puan',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: kFontColorPallets[0],
+                      letterSpacing: 1,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 25),
         ],
       ),
     );
@@ -235,10 +318,23 @@ class DashboardScreen extends GetView<DashboardController> {
           Row(
             children: [
               const Expanded(child: HeaderText("Log")),
-              IconButton(
-                onPressed: controller.onPressedCalendar,
-                icon: const Icon(EvaIcons.calendarOutline),
-                tooltip: "calendar",
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      'Show More',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w800,
+                        color: kFontColorPallets[2],
+                      ),
+                    )),
               )
             ],
           ),

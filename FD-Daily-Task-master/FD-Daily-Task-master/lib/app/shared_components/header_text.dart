@@ -1,3 +1,4 @@
+import 'package:daily_task/app/constans/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class HeaderText extends StatelessWidget {
@@ -11,6 +12,7 @@ class HeaderText extends StatelessWidget {
       style: const TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w800,
+        color: Color.fromRGBO(251, 111, 146, 1),
       ),
     );
   }
